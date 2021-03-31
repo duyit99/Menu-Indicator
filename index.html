@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menu Indicator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+       <nav>
+           <div id="marker"></div>
+           <li><a href="#">Home</a></li>
+           <li><a href="#">About</a></li>
+           <li><a href="#">Port</a></li>
+           <a href="#">Ser</a>
+           <a href="#">Contact</a>
+           <a href="#">Home</a>
+       </nav>
+       <script>
+           var marker = document.querySelector("#marker");
+           var item = document.querySelectorAll('nav a');
+           function indicator(e){
+               marker.style.left = e.offsetLeft+"px";
+               console.log("left="+e.offsetLeft);
+               marker.style.width = e.offsetWidth+"px";
+               console.log("with="+e.offsetWidth);
+
+           }
+           item.forEach(link =>{
+               link.addEventListener('click', (e)=>{
+                   indicator(e.target);
+               })
+           })
+       </script>
+    </body>
+</html>
